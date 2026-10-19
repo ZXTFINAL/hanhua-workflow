@@ -99,8 +99,25 @@ references/
   platforms/psp.md           唯一已验证平台（S4）
   platforms/<其他>.md        12 个 S0 占位
 scripts/hh.py                校验工具 CLI
+scripts/validate_skill.py    仓库自检：结构 + 占位文档不得含未验证流程
 assets/templates/            hh init 落地的工程模板
 ```
+
+---
+
+## 仓库自检
+
+```sh
+python3 scripts/validate_skill.py
+```
+
+检查三件事：
+
+1. `SKILL.md` 的 frontmatter 完整；
+2. **S0 占位文档里没有流程痕迹**——出现「标准流程」小节、可执行命令块、具体脚本调用或 `0x` 操作码即报错；
+3. README 的平台表与 `platforms/` 目录一致。
+
+CI（`.github/workflows/validate.yml`）在每次 push 时跑结构检查、语法检查与 CLI 冒烟（含"`glyphs` 无实测网格必须拒绝"的反向断言）。
 
 ---
 
