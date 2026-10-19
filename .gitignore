@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.idea/
+.vscode/
+
+# 汉化工程产物（本仓库只放流程与工具）
+work/
+releases/
+data/overlay/files/
+*.iso
+*.cso
+*.nsp
+*.xci
+*.cpk
+*.pak

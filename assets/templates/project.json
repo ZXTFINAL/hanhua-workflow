@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "title": "{{TITLE}}",
+  "platform": "{{PLATFORM}}",
+  "engine": "{{ENGINE}}",
+  "created": "{{DATE}}",
+  "source": {
+    "root": "{{SOURCE_ROOT}}",
+    "image_id": "",
+    "readonly": true,
+    "note": "只读原始快照。所有产物写 work/ 或独立输出目录。"
+  },
+  "text": {
+    "file": "data/translation/text.jsonl",
+    "glossary": "data/translation/glossary.csv",
+    "id_algo": "sha256-16",
+    "id_note": "id = sha256(源字节)[:16]，位置无关；改原文会导致批次失联",
+    "fields": {
+      "id": "id",
+      "source": "jp",
+      "target": "zh_cn"
+    }
+  },
+  "font": {
+    "mode": "unknown",
+    "mode_note": "grid（位图网格，本 skill 唯一验证过的模式）/ ttf / sdf / unknown。非 grid 时不填参数，先取证。",
+    "grids_note": "按实测逐套填写，一个都别猜。Fate/Extra 有三套（16×16 / 14×14 / 9×9），说明同一游戏内也不能假设一致。",
+    "grids": []
+  },
+  "gates": {
+    "max_line_width": 0,
+    "max_line_width_note": "0 = 未设置。必须由实测行宽决定，不要照抄案例的 24。",
+    "strict_ids": true,
+    "require_ruby_pairing": true
+  },
+  "paths": {
+    "inventory": "data/inventory",
+    "overlay": "data/overlay",
+    "review": "data/review",
+    "work": "work",
+    "reports": "reports"
+  }
+}
